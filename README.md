@@ -21,8 +21,10 @@ This project can run ROS and RVIZ on MacOS with M1 chip.
 2. Open the second Terminal window
     * ```docker exec -it M1-MacOS-RVIZ_ros_1 /bin/bash```
 
-3. Now you can run any ros tools in the second Terminal windows!For example:
+3. Now you can run any ros tools in the second Terminal windows and visual windows will display in novnc !For example:
     * ```rviz -d some.rviz```
+    And Then
+    * Open Browser with address http://localhost:8080
 
 # Note
 
