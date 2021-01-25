@@ -1,0 +1,23 @@
+version: '3'
+services:
+  ros:
+    image: ros:v0.0.1
+    command: tail -f /dev/null
+    volumes: 
+      - ./workspace:/root/catkin_ws/
+    environment:
+      - DISPLAY=novnc:0.0
+    env_file:
+      - ros.env
+    networks:
+      - x11
+  novnc:  
+    image: novnc:v0.0.1
+    env_file:
+      - novnc.env
+    ports:
+      - "8080:8080"
+    networks:
+      - x11
+networks:
+  x11:
