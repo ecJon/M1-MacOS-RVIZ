@@ -1,18 +1,26 @@
-# M1-MacOS-RVIZ
+# [M1-MacOS-RVIZ](https://github.com/ecJon/M1-MacOS-RVIZ)
 This project can run ROS and RVIZ on MacOS with M1 chip.
 
-# Usage
+## Note
+
+* This project base on docker currently,Please install docker first!
+
+* ROS version is Melodic.
+
+* All Dockerfiles are using chinese apt sources,Foreign friends can delete sources modify in Dockerfiles.
+
+## Usage
 
 1. Open a Terminal window
     * ```git clone https://github.com/ecJon/M1-MacOS-RVIZ.git```
 
     * ```cd M1-MacOS-RVIZ/ros-melodic-desktop-full```
 
-    *  ```docker build . -t="ros:v0.0.1" # Build ros image for M1 docker```
+    *  ```docker build . -t="ros:v0.0.1" # Build ros image for M1 docker (Foreign friends can docker pull 3340651973/ros-desktop-full)```
 
     * ```cd ../novnc```
 
-    * ```docker build . -t="novnc:v0.0.1" # Build novnc image for M1 docker```
+    * ```docker build . -t="novnc:v0.0.1" # Build novnc image for M1 docker (Foreign friends can docker pull 3340651973/novnc)```
 
     * ```cd ..```
 
@@ -26,19 +34,11 @@ This project can run ROS and RVIZ on MacOS with M1 chip.
     And Then
     * Open Browser with address http://localhost:8080
 
-# Note
-
-* This project base on docker currently,Please install docker first!
-
-* ROS version is Melodic.
-
-* All Dockerfiles are using chinese apt sources,Foreign friends can delete sources modify in Dockerfiles.
-
-# Thanks
+## Thanks
 [@theasp](https://github.com/theasp/docker-novnc) Novnc dockerfile and config base on docker-novnc
 
 [@nebocleaning](https://github.com/nebocleaning/mac-ros) ros dockerfile and docker-compos base on mac-ros
 
 
-# Open source agreement
+## Open source agreement
 [MIT](https://opensource.org/licenses/mit-license.php)
