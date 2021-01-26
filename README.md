@@ -23,7 +23,7 @@ This project can run ROS and RVIZ on MacOS with M1 chip.
 3. Now open address http://localhost:8080/vnc_auto.html in your Browser !And you will run any ros tool or rivz visually.
 
 ## Thanks
-[@theasp](https://github.com/theasp/docker-novnc) Novnc dockerfile and config base on docker-novnc
+[@theasp](https://github.com/theasp/docker-novnc) dockerfile and config base on docker-novnc
 
 
 ## Open source agreement
