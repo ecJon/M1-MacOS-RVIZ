@@ -16,11 +16,11 @@ This project can run ROS and RVIZ on MacOS with M1 chip.
 
     * ```cd M1-MacOS-RVIZ/ros-melodic-desktop-full```
 
-    *  ```docker build . -t="ros:v0.0.1" # Build ros image for M1 docker (Foreign friends can docker pull 3340651973/ros-desktop-full)```
+    *  ```docker build . -t="340651973/ros-desktop-full:latest" # Build ros image for M1 docker (Foreign friends can docker pull 3340651973/ros-desktop-full)```
 
     * ```cd ../novnc```
 
-    * ```docker build . -t="novnc:v0.0.1" # Build novnc image for M1 docker (Foreign friends can docker pull 3340651973/novnc)```
+    * ```docker build . -t="340651973/novnc:latest" # Build novnc image for M1 docker (Foreign friends can docker pull 3340651973/novnc)```
 
     * ```cd ..```
 

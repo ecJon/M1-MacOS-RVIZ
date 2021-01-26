@@ -1,7 +1,7 @@
 version: '3'
 services:
   ros:
-    image: ros:v0.0.1
+    image: 340651973/ros-desktop-full:latest
     command: tail -f /dev/null
     volumes: 
       - ./workspace:/root/catkin_ws/
@@ -12,7 +12,7 @@ services:
     networks:
       - x11
   novnc:  
-    image: novnc:v0.0.1
+    image: 340651973/novnc:latest
     env_file:
       - novnc.env
     ports:
