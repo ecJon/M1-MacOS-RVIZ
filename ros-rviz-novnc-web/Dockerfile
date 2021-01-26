@@ -13,15 +13,15 @@ RUN apt-get install -y net-tools
 RUN apt-get install -y wget
 RUN apt-get install -y ros-melodic-joy
 RUN apt-get install -y ros-melodic-teleop-twist-joy
-RUN apt-get install -y ros-melodic-teleop-twist-keyboard \ 
-    ros-melodic-laser-proc
+RUN apt-get install -y ros-melodic-teleop-twist-keyboard
+RUN apt-get install -y ros-melodic-laser-proc
 RUN apt-get install -y ros-melodic-rgbd-launch
 RUN apt-get install -y ros-melodic-depthimage-to-laserscan
-RUN apt-get install -y ros-melodic-rosserial-arduino \ 
-    ros-melodic-rosserial-python
-RUN apt-get install -y ros-melodic-rosserial-server \ 
-    ros-melodic-rosserial-client \ 
-    ros-melodic-rosserial-msgs
+RUN apt-get install -y ros-melodic-rosserial-arduino
+RUN apt-get install -y ros-melodic-rosserial-python
+RUN apt-get install -y ros-melodic-rosserial-server
+RUN apt-get install -y ros-melodic-rosserial-client
+RUN apt-get install -y ros-melodic-rosserial-msgs
 RUN apt-get install -y ros-melodic-amcl
 RUN apt-get install -y ros-melodic-map-server
 RUN apt-get install -y ros-melodic-move-base
@@ -32,9 +32,32 @@ RUN apt-get install -y ros-melodic-rqt-image-view
 RUN apt-get install -y ros-melodic-gmapping
 RUN apt-get install -y ros-melodic-navigation
 RUN apt-get install -y ros-melodic-interactive-markers
-RUN mkdir -p /root/catkin_ws/src
+RUN apt-get install -y bash
+RUN apt-get install -y fluxbox
+RUN apt-get install -y git
+RUN apt-get install -y net-tools
+RUN apt-get install -y novnc
+RUN apt-get install -y supervisor
+RUN apt-get install -y x11vnc
+RUN apt-get install -y xterm
+RUN apt-get install -y xvfb
+RUN mkdir -p /root/catkin_ws
 WORKDIR /root/catkin_ws
 RUN /bin/bash -c "source /opt/ros/melodic/setup.bash"
 RUN echo "source /opt/ros/melodic/setup.sh" >> /root/.bashrc
-RUN echo "source /root/catkin_ws/devel/setup.bash" >> /root/.bashrc
-WORKDIR /root/catkin_ws/src
+WORKDIR /root/catkin_ws
+ENV HOME=/root \
+    DEBIAN_FRONTEND=noninteractive \
+    LANG=en_US.UTF-8 \
+    LANGUAGE=en_US.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    DISPLAY=:0.0 \
+    DISPLAY_WIDTH=1024 \
+    DISPLAY_HEIGHT=768 \
+    RUN_XTERM=yes \
+    RUN_FLUXBOX=yes \
+    ROS_MASTER_URI=http://172.16.0.240:11311 \
+    ROS_HOSTNAME=ros
+COPY . /app
+CMD ["/app/entrypoint.sh"]
+EXPOSE 8080
